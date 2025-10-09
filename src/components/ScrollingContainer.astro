@@ -20,17 +20,14 @@ const { cardContent } = Astro.props;
     display: grid;
     grid-template-columns: repeat(4, minmax(400px, 1fr));
     gap: var(--card-gap);
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-
-    padding-inline: calc((100vw - var(--content-width)) / 2);
     width: 100vw;
     margin-inline: calc(((100vw - var(--content-width)) / 2) * -1);
-
+    padding-inline: calc((100vw - var(--content-width)) / 2);
+    scroll-padding-inline: calc((100vw - var(--content-width)) / 2);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     li {
-      width: 100%;
-      scroll-snap-align: end;
-      scroll-snap-stop: always;
+      scroll-snap-align: start;
       padding: var(--card-padding);
       border-radius: var(--card-border-radius);
       background: var(--card-background);
